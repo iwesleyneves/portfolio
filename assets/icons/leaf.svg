@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ícone de folha sustentável">
+  <defs>
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4CAF50"/>
+      <stop offset="100%" stop-color="#81C784"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 4C20 4 8 16 8 28c0 12 9 24 24 32 15-8 24-20 24-32 0-12-12-24-24-24z" fill="url(#leafGradient)"/>
+  <path d="M32 4c-1.1 0-2 .9-2 2v32c0 1.1.9 2 2 2s2-.9 2-2V6c0-1.1-.9-2-2-2z" fill="#2E7D32" opacity="0.85"/>
+  <path d="M22 18c-1 1-1 2.8 0 3.8l12 12c1 1 2.8 1 3.8 0s1-2.8 0-3.8L25.8 18.2C24.8 17.2 23 17.2 22 18z" fill="#1B5E20" opacity="0.75"/>
+</svg>

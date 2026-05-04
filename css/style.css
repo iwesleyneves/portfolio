@@ -1,0 +1,17 @@
+/* ============================= */
+/* IMPORTACAO DA FONTE */
+/* ============================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ============================= */
+/* ARQUIVOS BASE */
+/* ============================= */
+@import url("base.css");
+@import url("navbar.css");
+@import url("home.css");
+@import url("about.css");
+@import url("projects.css");
+@import url("skills.css");
+@import url("certificates.css");
+@import url("contact.css");
+@import url("modal.css");

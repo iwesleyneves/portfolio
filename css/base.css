@@ -1,0 +1,51 @@
+/* ============================= */
+/* VARIÁVEIS DE CORES */
+/* ============================= */
+:root {
+  --bg: #0f1419;
+  --text: #ffffff;
+  --muted: #b0b7bf;
+  --primary: #4a90e2;
+  --secondary: #7bb3f0;
+  --lavender: #5c7cfa;
+  --lavender-light: #2c3e50;
+  --soft-pink: #1a2332;
+  --black: #ffffff;
+}
+
+/* ============================= */
+/* RESET E CONFIGURAÇÕES GERAIS */
+/* ============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .home::before,
+  .about-photo-card::before,
+  .contact::before {
+    display: none !important;
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+section {
+  scroll-margin-top: 140px;
+}

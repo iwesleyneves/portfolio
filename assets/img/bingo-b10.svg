@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" fill="none">
+  <circle cx="120" cy="120" r="80" fill="#2563EB"/>
+  <circle cx="120" cy="120" r="58" fill="#FFFFFF"/>
+  <text x="120" y="95" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" fill="#1F2937">B</text>
+  <text x="120" y="155" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#1F2937">10</text>
+  <path d="M80 70C86 62 96 58 108 58H132C144 58 154 62 160 70" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
+  <path d="M80 170C86 178 96 182 108 182H132C144 182 154 178 160 170" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
+  <path d="M70 88L58 100" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
+  <path d="M70 152L58 140" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
+  <path d="M170 88L182 100" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
+  <path d="M170 152L182 140" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
+</svg>

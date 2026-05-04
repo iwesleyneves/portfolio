@@ -1,0 +1,153 @@
+@property --light-x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 24%;
+}
+
+@property --light-y {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 18%;
+}
+
+@property --float-y {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --base-tilt-x {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* ============================= */
+/* ANIMACOES DE ENTRADA */
+/* ============================= */
+.hidden {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================= */
+/* ANIMAÇÃO FLUTUANTE */
+/* ============================= */
+@keyframes devSceneFloat {
+  0% {
+    --float-y: 0px;
+    --base-tilt-x: 0deg;
+  }
+
+  50% {
+    --float-y: -12px;
+    --base-tilt-x: 5deg;
+  }
+
+  100% {
+    --float-y: 0px;
+    --base-tilt-x: 0deg;
+  }
+}
+
+@keyframes innerGlowPulse {
+  0% {
+    opacity: 0.65;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.65;
+  }
+}
+
+@keyframes codeSpin3d {
+  0% {
+    transform: rotateX(10deg) rotateY(-18deg) translateZ(0);
+  }
+
+  50% {
+    transform: rotateX(-2deg) rotateY(18deg) translateZ(20px);
+  }
+
+  100% {
+    transform: rotateX(10deg) rotateY(-18deg) translateZ(0);
+  }
+}
+
+@keyframes surfaceSweep {
+  0% {
+    background-position: 130% 0;
+    opacity: 0.2;
+  }
+
+  50% {
+    background-position: -30% 0;
+    opacity: 0.75;
+  }
+
+  100% {
+    background-position: 130% 0;
+    opacity: 0.2;
+  }
+}
+
+@keyframes orbitOne {
+  from {
+    transform: rotateX(68deg) rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateX(68deg) rotateZ(360deg);
+  }
+}
+
+@keyframes orbitTwo {
+  from {
+    transform: rotateY(65deg) rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateY(65deg) rotateZ(360deg);
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translate3d(0, 0, 35px) scale(1);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: translate3d(8px, -12px, 70px) scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 35px) scale(1);
+    opacity: 0.65;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
