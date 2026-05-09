@@ -70,7 +70,7 @@ Para visualizar o projeto em ambiente local:
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/iwesleyneves/PortifolioWeb.git
+git clone https://github.com/iwesleyneves/portfolio.git
 ```
 
 2. Navegue até o diretório e abra o arquivo `index.html`.
