@@ -1,29 +1,36 @@
 # Wesley Neves | Full-stack Developer Portfolio
 
-Repositório central do meu portfólio profissional. Este projeto foi desenvolvido com foco em performance, design modular e experiência do usuário, servindo como uma vitrine técnica das minhas competências em desenvolvimento de software e análise de dados.
+Repositório oficial do meu portfólio profissional ([iwesleyneves.github.io/portfolio](https://iwesleyneves.github.io/portfolio/)). O projeto foi desenvolvido com foco em alta performance, interatividade 3D/WebGL, arquitetura modular em JavaScript puro e experiência do usuário, servindo como vitrine técnica das minhas competências em desenvolvimento Web, Mobile e Ciência de Dados.
 
 ---
 
-## O Projeto
+## Destaques & Componentes Interativos
 
-O sistema foi arquitetado para ser uma plataforma estática de alto desempenho, utilizando padrões modernos de design e desenvolvimento para apresentar projetos, habilidades técnicas e certificações acadêmicas.
+A interface combina HTML5, CSS3 e JavaScript puro com renderização avançada em **Three.js**, **WebGL2**, **Canvas 2D** e **GSAP (ScrollTrigger)**, integrando componentes interativos adaptados do ecossistema *React Bits*:
 
-### Características Técnicas
-
-*   **Arquitetura Modular**: Lógica de interface e comportamento separada em módulos JavaScript independentes.
-*   **Design System Customizado**: Interface desenvolvida sem frameworks externos, utilizando Vanilla CSS para garantir total controle sobre a estética e performance.
-*   **Responsividade Avançada**: Sistema adaptável para múltiplas resoluções, incluindo navegação otimizada para dispositivos móveis.
-*   **Visualização de Certificados**: Implementação de modal customizado para exibição de certificações diretamente na interface principal.
+*   **Crachá 3D Interativo (`Lanyard`)**: Simulação física em tempo real com Three.js na seção *Home*, com efeito holográfico na superfície, cordão personalizado, interação de arrastar/esticar e clique para girar frente e verso.
+*   **Tipografia em Partículas (`ParticleText`)**: Animação em Canvas 2D que forma o nome `"Wesley Neves"` a partir de partículas dinâmicas com repulsão ao cursor, explosão ao clique e adaptação automática de cores entre os temas escuro e claro.
+*   **Tipografia Variável por Proximidade (`VariableProximity`)**: Subtítulo e apresentação da *Home* com fonte variável (`Roboto Flex`) que reage suavemente à distância do cursor.
+*   **Carrossel Infinito de Tecnologias (`LogoLoop`)**: Faixa contínua interativa com efeito *dock* de ampliação, cores oficiais de cada linguagem no hover e suporte a arraste.
+*   **Card de Perfil Holográfico (`ProfileCard`)**: Card 3D na seção *Sobre mim* com inclinação, parallax na foto, brilho especular (`glare`) e reflexo holográfico.
+*   **Revelação Dinâmica no Scroll (`ScrollReveal`)**: Textos e títulos das seções revelados palavra por palavra com desfoque e nivelamento progressivo sincronizados com a rolagem via GSAP ScrollTrigger.
+*   **Cards 3D com Parallax (`TiltedCard`)**: Aplicados aos cards de *Projetos* e de *Formação Acadêmica*, com camadas flutuantes em diferentes profundidades (`--tc-depth`), reflexo de borda e tooltip que acompanha o cursor.
+*   **Pilha 3D de Habilidades (`CardSwap`)**: Deck 3D interativo na seção *Habilidades* (`Desenvolvimento`, `Dados`, `Banco de Dados` e `Ferramentas`) com troca automática, suporte a arraste/impulso (*fling*) e navegação por clique ou teclado.
+*   **Pasta de Vidro 3D (`Folder`)**: Pasta interativa com shader WebGL2 de vidro refrativo (`variant: glass`) na seção *Certificados*, contendo todas as 12 certificações que podem ser espiadas, abertas em leque, arrastadas para fora e ampliadas no modal.
+*   **Botões com Reflexo Especular (`SpecularButton`)**: Botões com iluminação de borda renderizada via shader WebGL2 que acompanha a proximidade do mouse.
+*   **Cursor Mira (`TargetCursor`)**: Retículo giratório customizado que trava magneticamente nos elementos interativos da página.
+*   **Modo Claro e Escuro (`Light / Dark Theme`)**: Alternância completa de tema com persistência em `localStorage`, adaptando cores, sombras, partículas, cursor e texturas 3D em tempo real.
 
 ---
 
 ## Stack Tecnológica
 
-O desenvolvimento prioriza o uso de tecnologias nativas para otimização de recursos:
-
 *   **HTML5 Semântico**
-*   **CSS3** (Custom Properties, Flexbox, CSS Grid)
-*   **JavaScript (ES6+)**
+*   **CSS3 Modular** (Custom Properties, Flexbox, CSS Grid, Media Queries, Backdrop Filters)
+*   **JavaScript (ES6+ Vanilla)**
+*   **Three.js & WebGL2 Shaders** (Renderização 3D, física do crachá, refração de vidro e iluminação especular)
+*   **GSAP & ScrollTrigger** (Animações de texto vinculadas ao scroll)
+*   **Devicon & SVGs Customizados** (Ícones e ilustrações vetoriais exclusivas para os projetos)
 
 ---
 
@@ -31,60 +38,90 @@ O desenvolvimento prioriza o uso de tecnologias nativas para otimização de rec
 
 ```text
 .
-├── assets/                 # Ativos estáticos do projeto
-│   ├── docs/               # Documentos oficiais (Currículo PDF)
-│   ├── icons/              # Ícones SVG e utilitários
-│   └── img/                # Imagens do projeto e certificados
-├── css/                    # Sistema de estilização modular
-│   ├── about.css           # Estilos da seção 'Sobre'
-│   ├── animation.css       # Keyframes e animações globais
-│   ├── base.css            # Variáveis globais e resets
-│   ├── certificates.css    # Estilos da seção de certificações
-│   ├── contact.css         # Estilos da seção de contato
-│   ├── home.css            # Estilos da seção inicial (hero)
-│   ├── modal.css           # Interface do visualizador de certificados
-│   ├── navbar.css          # Navegação e menu mobile
-│   ├── projects.css        # Estilos da vitrine de projetos
-│   ├── responsive.css      # Ajustes de layout para diferentes resoluções
-│   ├── skills.css          # Estilos da seção de habilidades
-│   └── style.css           # Arquivo mestre de importações
-├── js/                     # Camada de lógica e interatividade
-│   ├── modules/            # Componentes lógicos independentes
-│   │   ├── active-nav.js   # Monitoramento de navegação ativa
-│   │   ├── carousels.js    # Lógica de carrosséis e banners
-│   │   ├── certificate-modal.js # Controle do visualizador de certificados
-│   │   ├── hero-3d.js      # Interatividade 3D na seção hero
-│   │   ├── mobile-menu.js  # Lógica do menu sanduíche
-│   │   └── reveal.js       # Efeitos de revelação no scroll
-│   └── script.js           # Inicialização e orquestração de módulos
-├── index.html              # Ponto de entrada e estrutura semântica
-├── LICENSE                 # Termos de uso e licenciamento (MIT)
-└── README.md               # Documentação técnica do projeto
+├── assets/                          # Ativos estáticos do projeto
+│   ├── docs/                        # Currículo atualizado em PDF (CurriculoWesleyNeves.pdf)
+│   ├── icons/                       # Ícones SVG utilitários e de categorias
+│   └── img/                         # Foto de perfil, favicon, texturas do crachá, logos dos projetos e certificados
+│       └── certificados/            # Imagens dos 12 certificados exibidos na pasta 3D e modal
+├── css/                             # Sistema de estilização modular
+│   ├── about.css                    # Estilos da seção 'Sobre mim'
+│   ├── animation.css                # Keyframes e transições globais
+│   ├── base.css                     # Variáveis de tema (Dark/Light) e resets
+│   ├── card-swap.css                # Estilos da pilha 3D de habilidades (CardSwap)
+│   ├── certificates.css             # Estilos da seção de certificações
+│   ├── contact.css                  # Estilos da seção de contato
+│   ├── folder.css                   # Estilos da pasta 3D de vidro (Folder)
+│   ├── home.css                     # Estilos da seção inicial (Hero)
+│   ├── lanyard.css                  # Posicionamento do canvas 3D do crachá
+│   ├── logo-loop.css                # Estilos do carrossel infinito de tecnologias
+│   ├── modal.css                    # Visualizador de certificados em tela cheia
+│   ├── navbar.css                   # Barra de navegação fixa e menu mobile
+│   ├── particle-text.css            # Container do texto em partículas
+│   ├── profile-card.css             # Estilos do card holográfico de perfil
+│   ├── projects.css                 # Carrossel e vitrine de projetos
+│   ├── responsive.css               # Responsividade para desktop, tablet e smartphones
+│   ├── scroll-reveal.css            # Estrutura de palavras do ScrollReveal
+│   ├── skills.css                   # Estilos base da seção de habilidades
+│   ├── specular-button.css          # Estilos dos botões com brilho WebGL2
+│   ├── style.css                    # Arquivo mestre de importações CSS
+│   ├── target-cursor.css            # Estilos do cursor mira interativo
+│   ├── theme.css                    # Botão de tema e ajustes visuais do Modo Claro
+│   ├── tilted-card.css              # Estilos dos cards 3D com parallax e glare
+│   └── variable-proximity.css       # Fonte variável Roboto Flex para proximidade
+├── js/                              # Camada de lógica, física e shaders
+│   ├── modules/                     # Módulos independentes
+│   │   ├── active-nav.js            # Destaque automático da seção ativa na navbar
+│   │   ├── card-swap.js             # Motor físico 3D da pilha de habilidades
+│   │   ├── carousels.js             # Controle do carrossel de projetos
+│   │   ├── certificate-modal.js     # Controle do modal de certificados
+│   │   ├── folder.js                # Pasta 3D interativa com shader WebGL2 de vidro
+│   │   ├── hero-3d.js               # Controle de performance da seção Hero
+│   │   ├── lanyard.js               # Crachá 3D com física de cordão em Three.js
+│   │   ├── logo-loop.js             # Loop contínuo de ícones com efeito dock
+│   │   ├── mobile-menu.js           # Controle do menu responsivo mobile
+│   │   ├── particle-text.js         # Amostragem e física de partículas em Canvas 2D
+│   │   ├── profile-card.js          # Inclinação 3D e efeito holográfico do perfil
+│   │   ├── reveal.js                # IntersectionObserver para entrada de elementos
+│   │   ├── scroll-reveal.js         # Animação de texto no scroll com GSAP
+│   │   ├── specular-button.js       # Shader WebGL2 de iluminação nos botões
+│   │   ├── target-cursor.js         # Cursor customizado com trava magnética
+│   │   ├── theme.js                 # Gerenciamento de tema Claro/Escuro (localStorage)
+│   │   ├── tilted-card.js           # Inclinação 3D, parallax e tooltip nos cards
+│   │   └── variable-proximity.js    # Interpolação de eixos de fonte variável por distância
+│   └── script.js                    # Orquestração e inicialização de todos os módulos
+├── index.html                       # Estrutura principal da aplicação
+├── LICENSE                          # Licença MIT
+└── README.md                        # Documentação do projeto
 ```
 
 ---
 
 ## Execução Local
 
-Para visualizar o projeto em ambiente local:
+Como o projeto utiliza texturas WebGL (`Three.js` e `WebGL2`) carregadas com política `CORS`, recomenda-se executá-lo através de um servidor HTTP local:
 
 1. Clone o repositório:
 ```bash
 git clone https://github.com/iwesleyneves/portfolio.git
+cd portfolio
 ```
 
-2. Navegue até o diretório e abra o arquivo `index.html`.
+2. Inicie um servidor local (ex.: extensão **Live Server** do VS Code, Python ou Node.js):
+```bash
+npx serve .
+```
 
 ---
 
 ## Contato
 
-*   **LinkedIn**: [Wesley Neves](https://www.linkedin.com/in/wesley-neves-87532b200/)
-*   **GitHub**: [iwesleyneves](https://github.com/iwesleyneves)
+*   **Portfólio**: [iwesleyneves.github.io/portfolio](https://iwesleyneves.github.io/portfolio/)
+*   **LinkedIn**: [linkedin.com/in/iwesleyneves](https://www.linkedin.com/in/iwesleyneves)
+*   **GitHub**: [github.com/iwesleyneves](https://github.com/iwesleyneves)
 *   **Email**: [wesleyneves675@gmail.com](mailto:wesleyneves675@gmail.com)
 
 ---
 
 ## Licença
 
-Este projeto é distribuído sob a Licença MIT. Para mais informações, consulte o arquivo `LICENSE`.
+Este projeto é distribuído sob a Licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
