@@ -1,5 +1,17 @@
+if (typeof initThemeToggle === "function") initThemeToggle();
 initActiveNav();
 initHero3d();
+if (typeof initLanyard === "function") initLanyard();
+if (typeof initParticleText === "function") initParticleText();
+if (typeof initScrollReveal === "function") initScrollReveal();
+if (typeof initTargetCursor === "function") initTargetCursor();
+if (typeof initProfileCard === "function") initProfileCard();
+if (typeof initFolder === "function") initFolder();
+if (typeof initTiltedCards === "function") initTiltedCards();
+if (typeof initCardSwap === "function") initCardSwap();
+if (typeof initSpecularButtons === "function") initSpecularButtons();
+if (typeof initLogoLoop === "function") initLogoLoop();
+if (typeof initVariableProximity === "function") initVariableProximity();
 initRevealAnimations();
 initCarousels();
 initCertificateModal();

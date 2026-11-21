@@ -7,15 +7,6 @@ function initCarousels() {
     sectionSelector: "#projects",
     viewportSelector: ".projects-viewport"
   });
-
-  createCarousel({
-    containerSelector: ".certificates-container",
-    cardSelector: ".certificate-card",
-    leftArrowSelector: ".cert-left",
-    rightArrowSelector: ".cert-right",
-    sectionSelector: "#certificates",
-    viewportSelector: ".certificates-viewport"
-  });
 }
 
 function createCarousel({
@@ -38,10 +29,24 @@ function createCarousel({
   let currentIndex = 0;
   let wheelScrollLocked = false;
 
+  function getGap() {
+    const computed = window.getComputedStyle(container);
+    return parseFloat(computed.columnGap || computed.gap) || 28;
+  }
+
+  function getCardStep() {
+    return cards[0].offsetWidth + getGap();
+  }
+
   function getVisibleCards() {
-    if (window.innerWidth <= 700) return 1;
-    if (window.innerWidth <= 1000) return 2;
-    return 3;
+    if (!viewport) {
+      if (window.innerWidth <= 700) return 1;
+      if (window.innerWidth <= 1000) return 2;
+      return 3;
+    }
+    const available = viewport.clientWidth;
+    const step = getCardStep();
+    return Math.max(1, Math.floor((available + getGap()) / step));
   }
 
   function getMaxIndex() {
@@ -49,10 +54,27 @@ function createCarousel({
   }
 
   function updateCarousel() {
-    const gap = 24;
-    const cardWidth = cards[0].offsetWidth + gap;
+    const gap = getGap();
+    const cardWidth = cards[0].offsetWidth;
+    const step = cardWidth + gap;
+    const maxIndex = getMaxIndex();
 
-    container.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+    const totalTrackWidth = cards.length * cardWidth + (cards.length - 1) * gap;
+    const viewportStyle = viewport ? window.getComputedStyle(viewport) : null;
+    const padX = viewportStyle
+      ? (parseFloat(viewportStyle.paddingLeft) || 0) + (parseFloat(viewportStyle.paddingRight) || 0)
+      : 0;
+    const innerWidth = viewport ? viewport.clientWidth - padX : totalTrackWidth;
+    const maxOffset = Math.max(0, totalTrackWidth - innerWidth);
+    const rawOffset = currentIndex * step;
+    const offset = currentIndex === maxIndex ? maxOffset : Math.min(rawOffset, maxOffset);
+
+    container.style.transform = `translate3d(-${Math.max(0, offset)}px, 0, 0)`;
+
+    leftArrow.classList.toggle("is-disabled", currentIndex <= 0);
+    rightArrow.classList.toggle("is-disabled", currentIndex >= maxIndex);
   }
 
   function next() {
@@ -139,4 +161,6 @@ function createCarousel({
     viewport.setAttribute("tabindex", "0");
     viewport.addEventListener("wheel", handleWheel, { passive: false });
   }
+
+  updateCarousel();
 }

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 900" width="640" height="900">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1419" />
+      <stop offset="50%" stop-color="#1a2332" />
+      <stop offset="100%" stop-color="#0d131a" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a90e2" />
+      <stop offset="50%" stop-color="#7bb3f0" />
+      <stop offset="100%" stop-color="#5c7cfa" />
+    </linearGradient>
+    <radialGradient id="glow1" cx="85%" cy="15%" r="55%">
+      <stop offset="0%" stop-color="#4a90e2" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#4a90e2" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow2" cx="15%" cy="85%" r="55%">
+      <stop offset="0%" stop-color="#5c7cfa" stop-opacity="0.24" />
+      <stop offset="100%" stop-color="#5c7cfa" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="640" height="900" fill="url(#bgGrad)" />
+  <rect width="640" height="900" fill="url(#glow1)" />
+  <rect width="640" height="900" fill="url(#glow2)" />
+
+  <!-- Subtle Grid / Circuit Lines -->
+  <g stroke="#4a90e2" stroke-opacity="0.1" stroke-width="1.5" fill="none">
+    <line x1="60" y1="120" x2="580" y2="120" />
+    <line x1="60" y1="780" x2="580" y2="780" />
+    <rect x="44" y="104" width="552" height="752" rx="36" stroke-opacity="0.22" stroke-width="2" />
+  </g>
+
+  <!-- Top Tag -->
+  <rect x="190" y="155" width="260" height="44" rx="22" fill="#1a2332" stroke="#4a90e2" stroke-opacity="0.45" stroke-width="1.5" />
+  <circle cx="222" cy="177" r="6" fill="#4ade80" />
+  <text x="334" y="183" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#7bb3f0" text-anchor="middle" letter-spacing="1.5">DEVELOPER ID</text>
+
+  <!-- Center Code Emblem -->
+  <g transform="translate(320, 355)">
+    <circle cx="0" cy="0" r="102" fill="#141d29" stroke="url(#accentGrad)" stroke-width="3" />
+    <circle cx="0" cy="0" r="84" fill="none" stroke="#4a90e2" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="10 8" />
+    <text x="0" y="22" font-family="Consolas, Monaco, monospace" font-size="68" font-weight="800" fill="url(#accentGrad)" text-anchor="middle">&lt;/&gt;</text>
+  </g>
+
+  <!-- Name & Role -->
+  <text x="320" y="535" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="44" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="-0.5">Wesley Neves</text>
+  <text x="320" y="578" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="#7bb3f0" text-anchor="middle" letter-spacing="0.5">Desenvolvedor Web &amp; Mobile</text>
+
+  <!-- Divider -->
+  <rect x="245" y="612" width="150" height="4" rx="2" fill="url(#accentGrad)" />
+
+  <!-- Tech Stack Pills -->
+  <g transform="translate(320, 668)" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#e2e8f0" text-anchor="middle">
+    <g transform="translate(-165, 0)">
+      <rect x="-70" y="-22" width="140" height="36" rx="18" fill="#1e293b" stroke="#4a90e2" stroke-opacity="0.4" />
+      <text x="0" y="2">Java • Spring</text>
+    </g>
+    <g transform="translate(0, 0)">
+      <rect x="-75" y="-22" width="150" height="36" rx="18" fill="#1e293b" stroke="#4a90e2" stroke-opacity="0.4" />
+      <text x="0" y="2">React • Kotlin</text>
+    </g>
+    <g transform="translate(165, 0)">
+      <rect x="-70" y="-22" width="140" height="36" rx="18" fill="#1e293b" stroke="#4a90e2" stroke-opacity="0.4" />
+      <text x="0" y="2">Python • SQL</text>
+    </g>
+  </g>
+
+  <!-- Footer Handle -->
+  <text x="320" y="752" font-family="Consolas, Monaco, monospace" font-size="19" font-weight="600" fill="#b0b7bf" text-anchor="middle">github.com/iwesleyneves</text>
+  <text x="320" y="822" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15" font-weight="600" fill="#4a90e2" text-anchor="middle" letter-spacing="3">IFAM • ADS • FULL-STACK</text>
+</svg>

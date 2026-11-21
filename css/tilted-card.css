@@ -1,0 +1,229 @@
+/* ============================= */
+/* TILTED CARD (REACT BITS) */
+/* ============================= */
+.tilted-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  outline: none;
+  touch-action: pan-y pinch-zoom;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tilted-card[data-interactive] {
+  cursor: pointer;
+}
+
+.tilted-card[data-active] {
+  z-index: 6;
+}
+
+.tilted-card__shadow {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  background: var(--tc-shadow-color, rgba(74, 144, 226, 0.32));
+  filter: blur(22px);
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.tilted-card__body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  transform-style: preserve-3d;
+}
+
+.tilted-card__face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--tc-radius);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  isolation: isolate;
+}
+
+.tilted-card__back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+}
+
+.tilted-card__img {
+  position: absolute;
+  display: block;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.tilted-card__layer {
+  transform: translate3d(
+    calc(var(--tc-px, 0) * var(--tc-depth, 0) * 1px),
+    calc(var(--tc-py, 0) * var(--tc-depth, 0) * 1px),
+    0
+  );
+  will-change: transform;
+}
+
+.tilted-card__glare {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: radial-gradient(
+    farthest-corner circle at var(--tc-gx, 50%) var(--tc-gy, 50%),
+    rgba(var(--tc-glare-rgb, 255, 255, 255), calc(var(--tc-glare, 0) * 0.34)) 0%,
+    rgba(var(--tc-glare-rgb, 255, 255, 255), calc(var(--tc-glare, 0) * 0.331)) 9%,
+    rgba(var(--tc-glare-rgb, 255, 255, 255), calc(var(--tc-glare, 0) * 0.285)) 18%,
+    rgba(var(--tc-glare-rgb, 255, 255, 255), calc(var(--tc-glare, 0) * 0.202)) 27%,
+    rgba(var(--tc-glare-rgb, 255, 255, 255), calc(var(--tc-glare, 0) * 0.108)) 36%,
+    rgba(var(--tc-glare-rgb, 255, 255, 255), calc(var(--tc-glare, 0) * 0.035)) 45%,
+    rgba(var(--tc-glare-rgb, 255, 255, 255), calc(var(--tc-glare, 0) * 0.003)) 54%,
+    rgba(var(--tc-glare-rgb, 255, 255, 255), 0) 60%
+  );
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.tilted-card__rim {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  border-radius: inherit;
+  box-shadow:
+    inset 0 0 0 1px var(--tc-rim-color, rgba(74, 144, 226, 0.2)),
+    inset 0 1px 0 var(--tc-rim-light, rgba(255, 255, 255, 0.12));
+  pointer-events: none;
+}
+
+.tilted-card__edge {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  box-sizing: border-box;
+  padding: 1px;
+  border-radius: inherit;
+  background: radial-gradient(
+    farthest-side circle at var(--tc-gx, 50%) var(--tc-gy, 50%),
+    rgba(var(--tc-glare-rgb, 255, 255, 255), calc(var(--tc-glare, 0) * 0.85)) 0%,
+    rgba(var(--tc-glare-rgb, 255, 255, 255), calc(var(--tc-glare, 0) * 0.71)) 18%,
+    rgba(var(--tc-glare-rgb, 255, 255, 255), calc(var(--tc-glare, 0) * 0.43)) 36%,
+    rgba(var(--tc-glare-rgb, 255, 255, 255), calc(var(--tc-glare, 0) * 0.16)) 54%,
+    rgba(var(--tc-glare-rgb, 255, 255, 255), calc(var(--tc-glare, 0) * 0.02)) 72%,
+    rgba(var(--tc-glare-rgb, 255, 255, 255), 0) 85%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+  pointer-events: none;
+}
+
+.tilted-card:focus-visible .tilted-card__rim {
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.7),
+    inset 0 0 0 3px rgba(0, 0, 0, 0.35);
+}
+
+.tilted-card__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  transform: translateZ(var(--tc-lift, 30px));
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.tilted-card__caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  margin: 16px 0 0 14px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: rgba(15, 20, 25, 0.96);
+  border: 1px solid rgba(74, 144, 226, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(24, 24, 27, 0.08),
+    0 10px 22px -6px rgba(0, 0, 0, 0.65);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: 0 0;
+  will-change: transform, opacity;
+}
+
+/* Override para .project-card quando transformado em .tilted-card */
+.project-card.tilted-card {
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  content-visibility: visible;
+  transition: none;
+}
+
+.project-card.tilted-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.project-card.tilted-card .tilted-card__front {
+  display: flex;
+  flex-direction: column;
+  min-height: 455px;
+  padding: 15px;
+  background: rgba(26, 35, 50, 0.92);
+  border: 1px solid rgba(74, 144, 226, 0.15);
+  box-shadow: 0 15px 40px rgba(74, 144, 226, 0.1);
+}
+
+/* Override para .highlight-card na seção Sobre mim quando transformado em .tilted-card */
+.highlight-card.tilted-card {
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  transition: none;
+}
+
+.highlight-card.tilted-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.highlight-card.tilted-card .tilted-card__front {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px;
+  background: rgba(26, 35, 50, 0.88);
+  border: 1px solid rgba(74, 144, 226, 0.18);
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.08);
+}
+
+@media (max-width: 380px) {
+  .project-card.tilted-card .tilted-card__front {
+    min-height: 430px;
+  }
+}

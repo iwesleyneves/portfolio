@@ -1,13 +1,55 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" fill="none">
-  <circle cx="120" cy="120" r="80" fill="#2563EB"/>
-  <circle cx="120" cy="120" r="58" fill="#FFFFFF"/>
-  <text x="120" y="95" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" fill="#1F2937">B</text>
-  <text x="120" y="155" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#1F2937">10</text>
-  <path d="M80 70C86 62 96 58 108 58H132C144 58 154 62 160 70" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
-  <path d="M80 170C86 178 96 182 108 182H132C144 182 154 178 160 170" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
-  <path d="M70 88L58 100" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
-  <path d="M70 152L58 140" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
-  <path d="M170 88L182 100" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
-  <path d="M170 152L182 140" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260" width="360" height="260" fill="none">
+  <defs>
+    <radialGradient id="bingoGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.3"/>
+      <stop offset="55%" stop-color="#3b82f6" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mainSphere" cx="38%" cy="32%" r="68%">
+      <stop offset="0%" stop-color="#93c5fd"/>
+      <stop offset="42%" stop-color="#3b82f6"/>
+      <stop offset="85%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </radialGradient>
+    <radialGradient id="sideSphere" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#c4b5fd"/>
+      <stop offset="55%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#311068"/>
+    </radialGradient>
+  </defs>
+
+  <circle cx="180" cy="130" r="115" fill="url(#bingoGlow)"/>
+  <circle cx="180" cy="130" r="92" stroke="#818cf8" stroke-opacity="0.18" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <!-- Background Mini Bingo Card Grid -->
+  <g transform="rotate(-12 128 122)" opacity="0.85">
+    <rect x="86" y="68" width="76" height="96" rx="14" fill="#152033" stroke="#60a5fa" stroke-opacity="0.45" stroke-width="2"/>
+    <rect x="96" y="82" width="14" height="14" rx="4" fill="#3b82f6" opacity="0.4"/>
+    <rect x="117" y="82" width="14" height="14" rx="4" fill="#38bdf8" opacity="0.85"/>
+    <rect x="138" y="82" width="14" height="14" rx="4" fill="#3b82f6" opacity="0.3"/>
+    <rect x="96" y="104" width="14" height="14" rx="4" fill="#34d399" opacity="0.9"/>
+    <rect x="117" y="104" width="14" height="14" rx="4" fill="#f59e0b" opacity="0.9"/>
+    <rect x="138" y="104" width="14" height="14" rx="4" fill="#3b82f6" opacity="0.3"/>
+    <rect x="96" y="126" width="14" height="14" rx="4" fill="#3b82f6" opacity="0.3"/>
+    <rect x="117" y="126" width="14" height="14" rx="4" fill="#3b82f6" opacity="0.4"/>
+    <rect x="138" y="126" width="14" height="14" rx="4" fill="#38bdf8" opacity="0.85"/>
+  </g>
+
+  <!-- Secondary Floating Ball -->
+  <g transform="translate(232, 82)">
+    <circle cx="0" cy="0" r="26" fill="url(#sideSphere)"/>
+    <circle cx="0" cy="0" r="16" fill="#ffffff" fill-opacity="0.92"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800" fill="#4c1d95">I-24</text>
+  </g>
+
+  <!-- Main 3D Bingo Sphere (B-10) -->
+  <g transform="translate(186, 138)">
+    <circle cx="0" cy="0" r="62" fill="url(#mainSphere)" stroke="#93c5fd" stroke-opacity="0.5" stroke-width="2"/>
+    <circle cx="-4" cy="-3" r="39" fill="#ffffff"/>
+    <circle cx="-4" cy="-3" r="34" stroke="#3b82f6" stroke-width="2" stroke-opacity="0.35"/>
+    <text x="-4" y="-12" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#2563eb">B</text>
+    <text x="-4" y="18" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="33" font-weight="900" fill="#0f172a" letter-spacing="-1">10</text>
+    <!-- Specular Highlight -->
+    <ellipse cx="-26" cy="-34" rx="12" ry="6" transform="rotate(-30 -26 -34)" fill="#ffffff" fill-opacity="0.55"/>
+  </g>
 </svg>

@@ -1,12 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" fill="none">
-  <rect x="52" y="48" width="136" height="144" rx="20" fill="#EFF6FF" stroke="#1F2937" stroke-width="6"/>
-  <path d="M84 84H156" stroke="#1F2937" stroke-width="8" stroke-linecap="round"/>
-  <path d="M84 114H156" stroke="#1F2937" stroke-width="8" stroke-linecap="round"/>
-  <path d="M84 144H132" stroke="#1F2937" stroke-width="8" stroke-linecap="round"/>
-  <path d="M84 174H116" stroke="#1F2937" stroke-width="8" stroke-linecap="round"/>
-  <path d="M62 100C62 90.0589 70.059 82 80 82H160C169.941 82 178 90.0589 178 100V156C178 165.941 169.941 174 160 174H80C70.059 174 62 165.941 62 156V100Z" fill="#D1D5DB" opacity="0.24"/>
-  <path d="M106 46H134C139.523 46 144 50.4771 144 56V64H96V56C96 50.4771 100.477 46 106 46Z" fill="#F8FAFC" stroke="#1F2937" stroke-width="6"/>
-  <path d="M62 132L74 122L92 140L118 108L146 150L178 116" stroke="#0F172A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
-  <path d="M86 62H154" stroke="#2563EB" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260" width="360" height="260" fill="none">
+  <defs>
+    <radialGradient id="invGlow" cx="50%" cy="48%" r="55%">
+      <stop offset="0%" stop-color="#4a90e2" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#f59e0b" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="boxTop" x1="180" y1="54" x2="180" y2="122" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="boxLeft" x1="114" y1="88" x2="180" y2="198" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="boxRight" x1="246" y1="88" x2="180" y2="198" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1e40af"/>
+      <stop offset="100%" stop-color="#172554"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="180" cy="130" r="115" fill="url(#invGlow)"/>
+  <circle cx="180" cy="130" r="90" stroke="#60a5fa" stroke-opacity="0.16" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <!-- Isometric 3D Package Cube -->
+  <!-- Top Face -->
+  <path d="M180 54L246 88L180 122L114 88L180 54Z" fill="url(#boxTop)" stroke="#93c5fd" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Left Face -->
+  <path d="M114 88L180 122V198L114 164V88Z" fill="url(#boxLeft)" stroke="#60a5fa" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Right Face -->
+  <path d="M246 88L180 122V198L246 164V88Z" fill="url(#boxRight)" stroke="#3b82f6" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- Package Tape Strip -->
+  <path d="M147 71L213 105V130L198 138V113L132 79L147 71Z" fill="#fbbf24" fill-opacity="0.9"/>
+
+  <!-- Barcode Tag on Left Face -->
+  <g transform="matrix(0.89 0.46 0 1 128 122)">
+    <rect x="0" y="0" width="36" height="22" rx="4" fill="#0f172a" fill-opacity="0.75" stroke="#93c5fd" stroke-width="1"/>
+    <line x1="7" y1="5" x2="7" y2="17" stroke="#e2e8f0" stroke-width="2"/>
+    <line x1="12" y1="5" x2="12" y2="17" stroke="#e2e8f0" stroke-width="1.5"/>
+    <line x1="17" y1="5" x2="17" y2="17" stroke="#e2e8f0" stroke-width="3"/>
+    <line x1="23" y1="5" x2="23" y2="17" stroke="#e2e8f0" stroke-width="1.5"/>
+    <line x1="28" y1="5" x2="28" y2="17" stroke="#e2e8f0" stroke-width="2.5"/>
+  </g>
+
+  <!-- Verified / Stock Sync Badge -->
+  <circle cx="234" cy="176" r="24" fill="#0f172a" stroke="#34d399" stroke-width="3"/>
+  <circle cx="234" cy="176" r="18" fill="#10b981" fill-opacity="0.2"/>
+  <path d="M225 176L231 182L244 169" stroke="#34d399" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

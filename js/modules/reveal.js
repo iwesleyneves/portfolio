@@ -1,6 +1,6 @@
 function initRevealAnimations() {
   const hiddenElements = document.querySelectorAll(
-    ".home-text, .home-img, .about-img, .about-text, .project-card, .skills, .certificates, .contact"
+    ".home-text, .home-img, .about-img, .certificate-card, .contact"
   );
 
   if (hiddenElements.length === 0) return;

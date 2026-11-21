@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260" width="360" height="260" fill="none">
+  <defs>
+    <radialGradient id="ecoGlow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.28"/>
+      <stop offset="65%" stop-color="#059669" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bagGrad" x1="115" y1="75" x2="245" y2="215" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#132a28"/>
+      <stop offset="100%" stop-color="#0b191b"/>
+    </linearGradient>
+    <linearGradient id="leafMain" x1="145" y1="88" x2="220" y2="178" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="55%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="leafStroke" x1="130" y1="70" x2="235" y2="205" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6ee7b7"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ambient Glow & Tech Grid -->
+  <circle cx="180" cy="128" r="115" fill="url(#ecoGlow)"/>
+  <circle cx="180" cy="128" r="88" stroke="#10b981" stroke-opacity="0.16" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <!-- Shopping Bag Frame -->
+  <path d="M122 86C122 79.3726 127.373 74 134 74H226C232.627 74 238 79.3726 238 86V190C238 201.046 229.046 210 218 210H142C130.954 210 122 201.046 122 190V86Z" fill="url(#bagGrad)" stroke="url(#leafStroke)" stroke-width="3"/>
+
+  <!-- Bag Handles -->
+  <path d="M152 74V62C152 46.536 164.536 34 180 34C195.464 34 208 46.536 208 62V74" stroke="url(#leafMain)" stroke-width="5.5" stroke-linecap="round"/>
+  <circle cx="152" cy="87" r="4" fill="#6ee7b7"/>
+  <circle cx="208" cy="87" r="4" fill="#6ee7b7"/>
+
+  <!-- Central Eco Leaf Emblem -->
+  <path d="M214 106C174 106 146 126 146 158C146 173 157 184 172 184C204 184 218 152 214 106Z" fill="url(#leafMain)"/>
+  <path d="M148 180C162 162 180 144 205 122" stroke="#064e3b" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M172 153L187 151" stroke="#064e3b" stroke-width="3" stroke-linecap="round"/>
+  <path d="M164 166L176 141" stroke="#064e3b" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Floating Eco Sparkles -->
+  <circle cx="102" cy="96" r="3.5" fill="#34d399" opacity="0.8"/>
+  <circle cx="258" cy="156" r="4" fill="#6ee7b7" opacity="0.7"/>
+  <circle cx="248" cy="82" r="2.5" fill="#34d399" opacity="0.6"/>
+</svg>

@@ -52,13 +52,35 @@
   .home {
     flex-direction: column;
     min-height: auto;
-    margin-top: 34px;
+    margin-top: 118px;
     text-align: center;
+  }
+
+  .about-img {
+    display: none;
+  }
+
+  .home-text {
+    width: 100%;
   }
 
   .home-text p {
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
+    padding: 0 6px;
+  }
+
+  .home-particle-name {
+    margin-left: auto;
+    margin-right: auto;
+    height: 76px;
+    min-height: 76px;
+  }
+
+  .home-img {
+    width: 100%;
+    margin-top: 8px;
   }
 
   .home-tags,
@@ -69,6 +91,17 @@
   .hero-card {
     width: 320px;
     height: 320px;
+  }
+
+  .lanyard-wrapper {
+    max-width: 400px;
+    height: 460px;
+  }
+
+  .lanyard {
+    width: 150vw;
+    height: 1550px;
+    top: -620px;
   }
 
   .dev-symbol-3d {
@@ -181,6 +214,7 @@
     position: absolute;
     top: 80px;
     left: 50%;
+    margin: 0;
     transform: translateX(-50%) translateY(-20px);
     width: 100%;
     background: rgba(15, 20, 25, 0.98);
@@ -218,12 +252,18 @@
 
   .home {
     gap: 32px;
+    margin-top: 112px;
     margin-bottom: 70px;
   }
 
   .home-text h1 {
     font-size: 2rem;
     letter-spacing: 0;
+  }
+
+  .home-particle-name {
+    height: 62px;
+    min-height: 62px;
   }
 
   .home-text h3 {
@@ -237,6 +277,17 @@
   .hero-card {
     width: 265px;
     height: 265px;
+  }
+
+  .lanyard-wrapper {
+    max-width: 340px;
+    height: 430px;
+  }
+
+  .lanyard {
+    width: 150vw;
+    height: 1500px;
+    top: -620px;
   }
 
   .dev-symbol-3d {
@@ -348,6 +399,17 @@
   .hero-card {
     width: 230px;
     height: 230px;
+  }
+
+  .lanyard-wrapper {
+    max-width: 290px;
+    height: 410px;
+  }
+
+  .lanyard {
+    width: 150vw;
+    height: 1450px;
+    top: -600px;
   }
 
   .dev-symbol-3d {

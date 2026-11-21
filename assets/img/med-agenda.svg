@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260" width="360" height="260" fill="none">
+  <defs>
+    <radialGradient id="medGlow" cx="50%" cy="48%" r="55%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.28"/>
+      <stop offset="65%" stop-color="#4a90e2" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="calBody" x1="105" y1="55" x2="255" y2="210" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#17253b"/>
+      <stop offset="100%" stop-color="#0f1826"/>
+    </linearGradient>
+    <linearGradient id="calHeader" x1="105" y1="55" x2="255" y2="95" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#4a90e2"/>
+    </linearGradient>
+    <linearGradient id="pillLeft" x1="135" y1="120" x2="180" y2="175" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="pillRight" x1="175" y1="125" x2="220" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="180" cy="130" r="115" fill="url(#medGlow)"/>
+  <circle cx="180" cy="130" r="90" stroke="#38bdf8" stroke-opacity="0.16" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <!-- Schedule Card -->
+  <rect x="106" y="54" width="148" height="154" rx="26" fill="url(#calBody)" stroke="#38bdf8" stroke-opacity="0.45" stroke-width="3"/>
+  <path d="M106 80C106 65.6406 117.641 54 132 54H228C242.359 54 254 65.6406 254 80V92H106V80Z" fill="url(#calHeader)"/>
+
+  <!-- Calendar Rings -->
+  <rect x="140" y="42" width="10" height="24" rx="5" fill="#e0f2fe"/>
+  <rect x="210" y="42" width="10" height="24" rx="5" fill="#e0f2fe"/>
+
+  <!-- Medical Cross Badge -->
+  <circle cx="236" cy="112" r="14" fill="#0ea5e9" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1.5"/>
+  <path d="M236 106V118M230 112H242" stroke="#7dd3fc" stroke-width="2.8" stroke-linecap="round"/>
+
+  <!-- 3D Capsule Pill -->
+  <g transform="rotate(-32 178 152)">
+    <rect x="136" y="134" width="84" height="36" rx="18" fill="url(#pillRight)"/>
+    <path d="M136 152C136 142.059 144.059 134 154 134H178V170H154C144.059 170 136 161.941 136 152Z" fill="url(#pillLeft)"/>
+    <rect x="136" y="134" width="84" height="36" rx="18" stroke="#7dd3fc" stroke-width="2"/>
+    <path d="M148 143H170" stroke="#ffffff" stroke-opacity="0.65" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Heartbeat / Notification Pulse Line -->
+  <path d="M124 188H154L162 176L172 197L182 182L188 188H236" stroke="#38bdf8" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -9,6 +9,9 @@
   display: flex;
   align-items: center;
   gap: 60px;
+
+  position: relative;
+  z-index: 2;
 }
 
 .about-img {
@@ -113,6 +116,8 @@
 
 .about-text {
   flex: 1.2;
+  position: relative;
+  z-index: 2;
 }
 
 .section-badge {

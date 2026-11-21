@@ -5,7 +5,7 @@ function initCertificateModal() {
   const overlay = document.querySelector(".modal-overlay");
   const certButtons = document.querySelectorAll(".certificate-card-link[data-cert-img]");
 
-  if (!modal || certButtons.length === 0) return;
+  if (!modal) return;
 
   function openModal(imgSrc) {
     modalImg.src = imgSrc;
