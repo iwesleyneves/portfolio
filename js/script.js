@@ -16,3 +16,4 @@ initRevealAnimations();
 initCarousels();
 initCertificateModal();
 initMobileMenu();
+if (typeof initPortfolioAnalytics === "function") initPortfolioAnalytics();

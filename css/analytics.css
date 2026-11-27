@@ -1,0 +1,412 @@
+/* ============================= */
+/* ANALYTICS PRIVADO (MODAL ADMIN) */
+/* ============================= */
+.analytics-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.analytics-modal.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.analytics-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 15, 22, 0.82);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.analytics-modal__box {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 28px;
+  border-radius: 26px;
+  background: rgba(20, 28, 40, 0.96);
+  border: 1px solid rgba(74, 144, 226, 0.32);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.65);
+  color: var(--text);
+  transform: translateY(14px) scale(0.96);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.analytics-modal.active .analytics-modal__box {
+  transform: translateY(0) scale(1);
+}
+
+.analytics-modal__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(74, 144, 226, 0.18);
+}
+
+.analytics-modal__title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.analytics-modal__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: rgba(74, 144, 226, 0.16);
+  border: 1px solid rgba(74, 144, 226, 0.35);
+  color: var(--primary);
+}
+
+.analytics-modal__badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.analytics-modal__title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0;
+}
+
+.analytics-modal__close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(74, 144, 226, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.analytics-modal__close:hover {
+  background: var(--primary);
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+/* Tela de Login com PIN */
+.analytics-auth {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 12px 0 6px;
+}
+
+.analytics-auth p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.analytics-auth__form {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.analytics-auth__input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(74, 144, 226, 0.32);
+  background: rgba(12, 17, 24, 0.8);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.96rem;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.analytics-auth__input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.analytics-auth__btn {
+  padding: 12px 22px;
+  border-radius: 14px;
+  border: none;
+  background: var(--primary);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.25s ease, transform 0.2s ease;
+}
+
+.analytics-auth__btn:hover {
+  filter: brightness(1.12);
+}
+
+.analytics-auth__btn:active {
+  transform: scale(0.97);
+}
+
+.analytics-auth__error {
+  font-size: 0.84rem;
+  color: #f87171;
+  font-weight: 600;
+  min-height: 18px;
+}
+
+/* Dashboard de Métricas */
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.analytics-card {
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(74, 144, 226, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.analytics-card__label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.analytics-card__value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.1;
+}
+
+.analytics-card__sub {
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+.analytics-section-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 18px 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.analytics-clicks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.analytics-click-pill {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(74, 144, 226, 0.08);
+  border: 1px solid rgba(74, 144, 226, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.analytics-click-pill span {
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.analytics-click-pill strong {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.analytics-meta-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.analytics-meta-box {
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(74, 144, 226, 0.16);
+}
+
+.analytics-meta-box h4 {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.analytics-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.analytics-list li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.84rem;
+  color: var(--text);
+}
+
+.analytics-list li strong {
+  color: var(--primary);
+}
+
+.analytics-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(74, 144, 226, 0.16);
+}
+
+.analytics-toggle-ignore {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84rem;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.analytics-toggle-ignore input {
+  accent-color: var(--primary);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.analytics-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.analytics-btn-secondary {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(74, 144, 226, 0.28);
+  background: rgba(74, 144, 226, 0.1);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.analytics-btn-secondary:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.analytics-setup-notice {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fcd34d;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+/* Ajustes para Modo Claro */
+html[data-theme="light"] .analytics-modal__overlay {
+  background: rgba(15, 23, 42, 0.45);
+}
+
+html[data-theme="light"] .analytics-modal__box {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(37, 99, 235, 0.22);
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.18);
+}
+
+html[data-theme="light"] .analytics-auth__input {
+  background: #f8fafc;
+  border-color: rgba(37, 99, 235, 0.28);
+  color: #0f172a;
+}
+
+html[data-theme="light"] .analytics-card,
+html[data-theme="light"] .analytics-meta-box {
+  background: #f8fafc;
+  border-color: rgba(37, 99, 235, 0.16);
+}
+
+html[data-theme="light"] .analytics-modal__close {
+  background: rgba(15, 23, 42, 0.06);
+  color: #0f172a;
+}
+
+html[data-theme="light"] .analytics-setup-notice {
+  background: rgba(245, 158, 11, 0.12);
+  color: #b45309;
+}
+
+@media (max-width: 600px) {
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-meta-row {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-auth__form {
+    flex-direction: column;
+  }
+}
